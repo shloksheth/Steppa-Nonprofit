@@ -1,16 +1,9 @@
-import ScrollExperience, { ScrollMotion, CourseControls } from './ScrollExperience';
+import ScrollExperience from './ScrollExperience';
 
 const tracks = [
   { label: 'First pilot', title: 'Python foundations', detail: 'Learn core programming concepts through four guided projects and one final capstone.', color: 'sun' },
   { label: 'Planned next', title: 'Web development', detail: 'Build the foundations of the web, then publish a complete personal portfolio.', color: 'mint' },
   { label: 'Future program', title: 'Game development', detail: 'Combine code, visual design, and storytelling to create a game other people can play.', color: 'rose' },
-];
-
-const steps = [
-  ['01', 'Learn a focused concept', 'Short lessons introduce one practical idea at a time.'],
-  ['02', 'Build a real project', 'Every module ends with something you made, not another passive quiz.'],
-  ['03', 'Get human support', 'Moderated group sessions help learners understand problems and keep moving.'],
-  ['04', 'Publish a capstone', 'Approved work receives structured feedback and practical publishing support.'],
 ];
 
 const roles = [
@@ -37,11 +30,11 @@ const policies = [
 export default function Home() {
   return (
     <main>
-      <ScrollMotion />
+      <a className="skip-link" href="#tracks">Skip to courses</a>
       <div className="hero-runway">
       <section className="paper-stage" id="top">
         <img className="desk-scene" src="/steppa-makers-desk.png" alt="A maker’s desk with a notebook, cutting mat, and laptop" fetchPriority="high" />
-        <div className="desk-shade" aria-hidden="true" />
+        
         <nav className="nav-shell" aria-label="Primary navigation">
           <a className="wordmark" href="#top" aria-label="Steppa home">
             <span className="wordmark-mark" aria-hidden="true">s.</span><span className="nav-brand">steppa</span>
@@ -56,10 +49,9 @@ export default function Home() {
           <a className="nav-cta" href="#join">Get involved <span aria-hidden="true">↗</span></a>
           <details className="mobile-menu"><summary>Menu</summary><div><a href="#tracks">Courses</a><a href="#how">How it works</a><a href="#safety">Safety</a><a href="#mission">About</a><a href="#join">Get involved</a><a href="#support">Donate</a></div></details>
         </nav>
-        <div className="scene-title"><p>Made for curious minds. Built for real projects.</p><h1>STEPPA.</h1></div>
         <div className="hero-shell">
           <div className="hero-copy">
-            <h2>Free coding.<br />Human support.<br />Finished work.</h2>
+            <h1>Free coding.<br />Human support.<br /><em>Finished work.</em></h1>
             <p className="hero-lede">A free path from first lesson to a project you’re proud to share.</p>
             <div className="hero-actions">
               <a className="button button-primary" href="#join">View the first pilot</a>
@@ -67,22 +59,9 @@ export default function Home() {
             </div>
             <p className="hero-note">Free to join · Orlando and online · Applications opening after safeguards are ready</p>
           </div>
-          <p className="scene-description">A first line of code.<br />A project of your own.<br />Somewhere to start.</p>
-          <div className="hero-board">
-            <div className="tape tape-one" aria-hidden="true" />
-            <div className="tape tape-two" aria-hidden="true" />
-            <figure className="hero-photo">
-              <img src="/mentor-students.jpg" width="1600" height="1067" loading="eager" fetchPriority="high" alt="A teacher and a group of teenage students collaborating around two laptops" />
-              <figcaption>
-                <strong>Learning works better together.</strong>
-                <span>Steppa is building focused lessons, real projects, and structured human support.</span>
-                <a href="https://www.pexels.com/photo/a-children-looking-the-laptop-5212687/" target="_blank" rel="noreferrer">Photo by Max Fischer on Pexels</a>
-              </figcaption>
-            </figure>
-          </div>
         </div>
-        <a className="scene-scroll" href="#tracks">↓ Scroll to explore</a>
-        <span className="scene-label">STEPPA / FIRST CHAPTER</span>
+        <a className="scene-scroll" href="#tracks">Explore the courses</a>
+
       </section>
       </div>
 
@@ -91,7 +70,6 @@ export default function Home() {
       <section className="cork-stage" id="tracks">
         <div className="course-runway"><div className="course-stage">
         <div className="section-heading">
-          <p className="eyebrow light">A focused program built to expand carefully</p>
           <h2>Start with one course. Finish with <em>real work.</em></h2>
           <p>Python launches first. New tracks follow after the pilot proves the learning and support model.</p>
         </div>
@@ -107,8 +85,7 @@ export default function Home() {
             </article>
           ))}
         </div>
-        <span className="course-scroll-note">Scroll to explore the tracks →</span>
-        <CourseControls />
+
         </div></div>
         <figure className="workshop-photo">
           <img src="/teen-coding.jpg" width="1600" height="1067" loading="lazy" alt="A teenager working at a computer with programming code visible on the screen" />
@@ -119,26 +96,9 @@ export default function Home() {
         </figure>
       </section>
 
-      <section className="how-stage journey-summary" id="journey-summary">
-        <div className="section-kicker">How Steppa works</div>
-        <div className="how-heading">
-          <h2>A clear path from first lesson to <em>published capstone.</em></h2>
-          <p>Each step has a purpose. Learners always know what they are building and what comes next.</p>
-        </div>
-        <div className="step-list">
-          {steps.map(([number, title, copy]) => (
-            <article className="step-row" key={number}>
-              <span className="step-number">{number}</span>
-              <div><h3>{title}</h3><p>{copy}</p></div>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section className="ship-stage">
         <div className="ship-inner">
           <div className="ship-copy">
-            <p className="eyebrow light">The Steppa difference</p>
             <h2>Turn learning into <em>finished work.</em></h2>
             <p>Learners complete a capstone, receive a structured review, and get support preparing approved projects for publication.</p>
             <ul>
@@ -167,7 +127,6 @@ export default function Home() {
             </figcaption>
           </figure>
           <div className="mentor-copy">
-            <p className="eyebrow">Mentorship that stays safe and useful</p>
             <h2>Get help when you <em>need it.</em></h2>
             <p>Steppa combines self-paced lessons with structured, moderated support from trained peer and adult volunteers.</p>
             <div className="mentor-features">
@@ -181,7 +140,6 @@ export default function Home() {
 
       <section className="safety-stage" id="safety">
         <div className="safety-heading">
-          <p className="eyebrow">Pilot commitments</p>
           <h2>Safety and privacy come before enrollment.</h2>
           <p>These commitments will be turned into complete, reviewable policies before Steppa collects applications or runs learner sessions.</p>
         </div>
@@ -199,7 +157,6 @@ export default function Home() {
 
       <section className="mission-stage" id="mission">
         <div className="mission-quote">
-          <p className="eyebrow light">Why Steppa exists</p>
           <blockquote>Talent is everywhere.<br/><em>Access to sustained support is not.</em></blockquote>
           <p>Steppa is building a free path from first lesson to a project a young person can confidently share.</p>
         </div>
@@ -213,7 +170,6 @@ export default function Home() {
 
       <section className="join-stage" id="join">
         <div className="join-heading">
-          <p className="eyebrow">First pilot in Orlando and online</p>
           <h2>Steppa is preparing its first <em>small cohort.</em></h2>
           <p>Applications and partner outreach will open after the safeguarding, privacy, and contact systems are ready.</p>
         </div>
@@ -236,7 +192,6 @@ export default function Home() {
 
       <section className="safety-stage launch-faq" id="faq" aria-labelledby="faq-title">
         <div className="safety-heading">
-          <p className="eyebrow">Pilot FAQ</p>
           <h2 id="faq-title">Before you join</h2>
         </div>
         <div className="faq-list">
@@ -252,7 +207,6 @@ export default function Home() {
       <section className="ship-stage" id="support" aria-labelledby="support-title">
         <div className="ship-inner support-inner">
           <div className="ship-copy">
-            <p className="eyebrow light">Support Steppa</p>
             <h2 id="support-title">Help keep the pilot <em>free.</em></h2>
             <p>Help us build the first Python course, prepare volunteers for moderated group sessions, and give learners a place to share their finished projects.</p>
             <a className="button button-sun" href={donationUrl}>Donate to Steppa through HCB</a>
