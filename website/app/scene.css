@@ -1,0 +1,121 @@
+/* A desk gives the opening its character. The sections below carry the story. */
+main :is(h1,h2,h3,p,a,strong,span,small,li,b,blockquote,figcaption){font-family:Arial,Helvetica,sans-serif!important}
+.mobile-menu{display:none}
+main .track-grid,main .role-grid,main .policy-grid{max-width:none}
+main .nav-links{display:flex}
+@media(max-width:600px){main .nav-links{display:none}}
+main :is(.hero-lede,.track-detail,.step-row p,.ship-copy p,.mentor-copy p,.mentor-features strong,.policy-note,.mission-quote p,.mission-stats strong,.workshop-photo figcaption strong,.workshop-photo figcaption span,.mentor-photo figcaption,.project-card strong,.project-card small,.role-card h3,.role-card span,footer p){font-family:Arial,Helvetica,sans-serif}
+@media(max-width:600px){main .nav-shell{display:flex}main .nav-cta{display:none}.mobile-menu{display:block;position:relative;font-size:12px}.mobile-menu summary{padding:8px 16px;border:1px solid #fff7e880;cursor:pointer;list-style:none}.mobile-menu>div{position:absolute;right:0;top:48px;width:220px;padding:24px;background:#263e30;display:grid;gap:20px;box-shadow:0 8px 24px #0003}.mobile-menu>div a{display:block}.mobile-menu summary:focus-visible{outline:3px solid #fff7e8;outline-offset:4px}}
+html body{background:#f3e8d5;color:#24271f}
+main h1,main h2,main h3,main blockquote,main p,main strong,main span,main small{font-family:Arial,Helvetica,sans-serif}
+main h2{font-weight:600;letter-spacing:-.055em;line-height:.98}
+main h2 em,main h1 em,main blockquote em{font-style:normal}
+main .paper-stage{height:100svh;min-height:680px;position:relative;overflow:hidden;background:#493c29;padding:0;color:#fff7e8}
+.desk-scene,.desk-shade{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.desk-shade{background:linear-gradient(180deg,#18201755,transparent 48%,#18201755)}
+main .nav-shell{position:absolute;z-index:8;left:40px;right:88px;top:20px;width:auto;min-height:40px;border:0;display:flex;justify-content:space-between;gap:32px}
+main .wordmark-mark{width:auto;height:auto;font-family:Arial,sans-serif;font-size:32px;letter-spacing:-.07em;background:none;transform:none;border-radius:0;box-shadow:none}
+.nav-brand{display:none}
+main .nav-links{gap:32px;margin-left:auto;font-size:11px;text-transform:uppercase}
+main .nav-links a::after{background:#fff7e8;bottom:-5px;height:1px}
+main .nav-cta{color:inherit;background:none;border:0;border-radius:0;box-shadow:none;transform:none;font-size:11px;text-transform:uppercase;padding:8px 0}
+main .nav-cta:hover{background:none;text-decoration:underline}
+.scene-title{position:absolute;z-index:2;left:32px;top:88px;right:64px}
+.scene-title p{font-size:12px;font-weight:700;text-transform:uppercase;margin-left:26%;margin-bottom:16px}
+main .scene-title h1{max-width:none;font-size:clamp(120px,20vw,320px);font-weight:800;letter-spacing:-.065em;line-height:.8;color:#fff0d8}
+main .hero-shell{position:static;display:block;width:auto;min-height:0;padding:0;margin:0}
+main .hero-copy{position:absolute;z-index:3;left:40px;bottom:56px;width:280px;padding:24px;background:#303426bb;backdrop-filter:blur(12px);border:1px solid #fff0d850}
+main .hero-copy h2{font-size:26px;line-height:1.04;letter-spacing:-.04em;color:#fff7e8}
+main .hero-lede{font-size:14px;line-height:1.4;margin:24px 0 0;padding:16px 0 0;background:none;border:0;border-top:1px dotted #fff0d870;box-shadow:none;color:#fff7e8}
+main .hero-actions{margin-top:16px;gap:12px}
+main .hero-actions .button{min-height:0;padding:4px 0;background:none;border:0;box-shadow:none;border-radius:0;font-size:11px;color:#fff7e8;text-decoration:underline;text-underline-offset:4px;justify-content:start}
+main .hero-actions .button-quiet{display:none}
+main .hero-note{font-size:9px;line-height:1.4;color:#e8ddca;margin-top:16px}
+main .hero-board{display:none}
+.scene-description{position:absolute;z-index:2;right:88px;top:48%;font-size:clamp(24px,2.8vw,42px);font-weight:600;letter-spacing:-.035em;line-height:1.18;text-shadow:0 2px 12px #0008}
+.scene-scroll{position:absolute;z-index:2;bottom:32px;left:56%;font-size:10px;text-transform:uppercase}
+.scene-label{position:absolute;right:0;top:0;background:#f3e8d5;color:#24271f;writing-mode:vertical-rl;padding:32px 20px;height:232px;font-size:11px;font-weight:700;z-index:9}
+
+/* Use quiet surfaces and editorial rows after the opening scene. */
+main .cork-stage,main .how-stage,main .mentor-stage,main .safety-stage,main .mission-stage,main .join-stage{padding:104px 48px;background:#f3e8d5;background-image:none;color:#24271f;min-height:0}
+main .section-heading,main .how-heading,main .safety-heading,main .join-heading{width:100%;max-width:none;text-align:left;margin-bottom:64px}
+main .section-heading h2,main .how-heading h2,main .safety-heading h2,main .join-heading h2{font-size:clamp(48px,7vw,104px);max-width:1100px}
+main .section-heading h2 em,main .how-heading h2 em,main .join-heading h2 em,main .mentor-copy h2 em{color:#777b65}
+main .section-heading>p:last-child,main .how-heading p,main .safety-heading>p:last-child,main .join-heading>p:last-child{max-width:640px;margin:32px 0 0;background:none;border:0;box-shadow:none;padding:0;color:#585b4c;font-size:19px;line-height:1.5}
+main .eyebrow,main .eyebrow.light{font-size:10px;color:#585b4c;margin-bottom:32px;letter-spacing:.08em}
+main .eyebrow::before{display:none}
+main .track-grid{width:100%;display:block;border-top:1px solid #24271f50}
+main .track-card{display:grid;grid-template-columns:120px 1fr 1fr 152px;gap:32px;align-items:center;min-height:0;padding:40px 0;background:transparent;border:0;border-bottom:1px solid #24271f50;box-shadow:none;border-radius:0;transform:none}
+main .track-card>p:first-of-type{margin:0;font-size:10px;color:#585b4c}
+main .track-card h3{font-size:32px;letter-spacing:-.04em}
+main .track-detail{margin:0;min-height:0;font-size:16px;color:#585b4c;line-height:1.5}
+main .track-card a{font-size:12px;align-self:center;width:max-content;border-bottom-width:1px}
+main .pushpin,main .project-line,main .pin{display:none}
+main .workshop-photo{width:100%;margin-top:64px;border:0;background:none;box-shadow:none;border-radius:0;grid-template-columns:1.6fr .6fr;gap:48px;align-items:center}
+main .workshop-photo img{height:480px}
+main .workshop-photo figcaption{padding:0}
+main .workshop-photo figcaption strong{font-size:38px;letter-spacing:-.045em}
+main .workshop-photo figcaption span{font-size:18px}
+main .workshop-photo figcaption a{font-size:9px;margin-top:24px}
+main .how-stage{background:#e8dfce}
+main .section-kicker{background:none;color:#585b4c;padding:0;margin:0 0 40px;font-size:10px;border-radius:0}
+main .step-list{width:100%;margin:0;border-top:1px solid #24271f50}
+main .step-row{padding:32px 0;grid-template-columns:120px 1fr;gap:32px}
+main .step-row>div{padding:0;background:none;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+main .step-row h3{font-size:28px}
+main .step-row p{font-size:17px;color:#585b4c}
+main .step-number{font-size:11px;color:#585b4c}
+main .ship-stage{padding:104px 48px;background:#263e30}
+main .ship-inner{width:100%;gap:80px}
+main .ship-copy h2{font-size:clamp(56px,7vw,112px)}
+main .ship-copy h2 em{color:#b6c2a2}
+main .ship-copy p{font-size:18px}
+main .ship-copy .eyebrow{color:#d2d8ca}
+main .ship-copy li{font-weight:400}
+main .ship-copy li span{background:none;color:#d2d8ca}
+main .button-sun{background:#eee4cd;border:0;border-radius:0;color:#263e30;box-shadow:none;font-weight:500}
+main .project-card{border:0;border-radius:0;padding:40px 32px;box-shadow:8px 12px 24px #12291b55}
+main .project-card strong{font-size:36px;letter-spacing:-.05em}
+main .project-front b{background:#263e30;font-size:10px;border-radius:0}
+main .mentor-grid{width:100%;gap:80px}
+main .mentor-photo{padding:0;background:none;box-shadow:none;border-radius:0;transform:none}
+main .mentor-photo img{height:540px}
+main .mentor-photo figcaption{font-size:12px;padding:16px 0 0}
+main .mentor-copy{padding:0;background:none;border:0;box-shadow:none}
+main .mentor-copy h2{font-size:clamp(48px,5.5vw,88px)}
+main .mentor-copy>p:not(.eyebrow){font-size:18px}
+main .mentor-features div{border-left:0;border-top:1px solid #24271f50;padding:16px 0 0}
+main .mentor-features strong{font-size:18px}
+main .safety-stage{padding-top:32px}
+main .policy-grid{width:100%;display:block}
+main .policy-card{min-height:0;padding:32px 0;background:none;border:0;border-top:1px solid #24271f50;display:grid;grid-template-columns:120px 1fr 1fr;gap:32px}
+main .policy-card>p{margin:0;font-size:10px}
+main .policy-card h3{font-size:26px;letter-spacing:-.04em;margin:0}
+main .policy-card>span{font-size:16px;color:#585b4c}
+main .policy-note{width:100%;max-width:none;margin:40px 0 0;border:0;background:#e8dfce;padding:24px;font-size:14px}
+main .mission-stage{background:#263e30;color:#f3e8d5}
+main .mission-quote{width:100%;max-width:none;text-align:left}
+main .mission-quote blockquote{font-size:clamp(48px,7vw,104px);letter-spacing:-.055em;line-height:1}
+main .mission-quote blockquote em{color:#b6c2a2}
+main .mission-quote>p:last-child{margin:32px 0 0;max-width:640px;font-size:20px;color:#d2d8ca}
+main .mission-quote .eyebrow{color:#d2d8ca}
+main .mission-stats{width:100%;border:0;border-top:1px solid #ffffff50}
+main .mission-stats strong{color:#f3e8d5;font-size:48px}
+main .mission-stats span{color:#d2d8ca;font-weight:400}
+main .join-stage{background:#c69b73}
+main .join-heading h2 em{color:#563f2e}
+main .role-grid{width:100%;display:block;border-top:1px solid #24271f50}
+main .role-card{display:grid;grid-template-columns:120px 1fr 1fr 140px;align-items:start;gap:32px;min-height:0;padding:32px 0;background:none;box-shadow:none;border:0;border-bottom:1px solid #24271f50;transform:none!important;border-radius:0}
+main .role-card>p{margin:0;font-size:10px}
+main .role-card h3{font-size:26px;margin:0}
+main .role-card>span:not(.pushpin){font-size:15px}
+main .role-card>strong{font-size:11px;padding:0;margin:0;border:0;color:#563f2e;align-self:start}
+main .join-note{background:none;padding:0;box-shadow:none;font-size:13px}
+main footer{background:#22281f;padding:64px 48px 32px;text-align:left}
+main .footer-mark{margin:0;font-size:clamp(72px,15vw,220px);font-weight:800;letter-spacing:-.065em;line-height:1}
+main .footer-mark .wordmark-mark{display:none}
+main footer>p{font-size:20px;margin:24px 0 40px}
+main footer>div{justify-content:start;font-size:12px}
+
+@media(max-width:900px){main .nav-shell{left:32px;right:72px}main .nav-links{gap:16px}main .cork-stage,main .how-stage,main .mentor-stage,main .safety-stage,main .mission-stage,main .join-stage,main .ship-stage{padding:80px 32px}main .track-card,main .role-card{grid-template-columns:100px 1fr 1fr;gap:24px}main .track-card a,main .role-card>strong{grid-column:2}.scene-description{right:72px;font-size:28px}.scene-title p{margin-left:0}.scene-title{top:104px}.scene-title h1{font-size:20vw}main .workshop-photo{gap:32px}.policy-card{grid-template-columns:100px 1fr 1fr!important}}
+@media(max-width:600px){main .paper-stage{height:100svh;min-height:760px}.desk-shade{background:#17231766}main .nav-shell{left:24px;right:24px;top:16px}.scene-title{left:16px;right:16px;top:104px}.scene-title p{font-size:9px;margin-bottom:16px}main .scene-title h1{font-size:22vw}.scene-description{left:24px;right:24px;top:34%;font-size:28px}main .hero-copy{left:24px;bottom:64px;width:248px;padding:20px}main .hero-copy h2{font-size:24px}.scene-scroll{left:auto;right:24px;bottom:24px}.scene-label{display:none}main .nav-cta{font-size:11px}main .cork-stage,main .how-stage,main .mentor-stage,main .safety-stage,main .mission-stage,main .join-stage,main .ship-stage{padding:64px 24px}main .section-heading,main .how-heading,main .safety-heading,main .join-heading{margin-bottom:40px}main .track-card,main .role-card,main .policy-card{grid-template-columns:1fr!important;gap:16px;padding:24px 0}main .track-card a,main .role-card>strong{grid-column:auto}main .track-card h3{font-size:28px}main .workshop-photo{grid-template-columns:1fr;gap:24px;margin-top:48px}main .workshop-photo img{height:320px}main .workshop-photo figcaption strong{font-size:32px}main .step-row{grid-template-columns:32px 1fr;gap:16px;padding:24px 0}main .step-row>div{grid-template-columns:1fr;gap:12px}main .step-row h3{font-size:24px}main .ship-inner,main .mentor-grid{grid-template-columns:1fr;gap:48px}main .mentor-photo img{height:360px}main .mentor-copy h2{font-size:48px}main .project-stack{transform:scale(.78);min-height:420px}main .join-note{display:block}main .join-note a{display:inline-block;margin-top:16px}main footer{padding:48px 24px 24px}main .footer-mark{font-size:22vw}main footer>div{gap:16px}}

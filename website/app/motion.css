@@ -1,0 +1,61 @@
+/* Scroll is the timeline. Sticky scenes give each idea time to take shape. */
+.hero-runway{height:190svh;--hero-progress:0}
+main .hero-runway .paper-stage{position:sticky;top:0;height:100svh;min-height:680px}
+.hero-runway .desk-scene{transform:scale(calc(1 + var(--hero-progress)*.35)) rotate(calc(var(--hero-progress)*-3deg));transform-origin:56% 62%;will-change:transform}
+.hero-runway .scene-title{transform:translateY(calc(var(--hero-progress)*-180px));opacity:calc(1 - var(--hero-progress)*1.5);will-change:transform,opacity}
+.hero-runway .hero-copy{transform:translateX(calc(var(--hero-progress)*-130px));opacity:calc(1 - var(--hero-progress)*1.4)}
+.hero-runway .scene-description{transform:translateY(calc(var(--hero-progress)*-80px));opacity:calc(1 - var(--hero-progress)*1.6)}
+.hero-runway .desk-shade{background:linear-gradient(180deg,#18201755,transparent 48%,#18201755);box-shadow:inset 0 0 0 100vmax rgba(25,29,21,calc(var(--hero-progress)*.8))}
+.hero-runway .scene-scroll{opacity:calc(1 - var(--hero-progress)*4)}
+.reading-progress{position:fixed;bottom:0;left:0;right:0;height:3px;background:#c89b68;transform:scaleX(var(--page-progress,0));transform-origin:left;z-index:100;pointer-events:none}
+.journey-runway{height:480svh;background:#20271f;--journey-progress:0;position:relative;color:#f5ebd6}
+.journey-stage{height:100svh;min-height:680px;position:sticky;top:0;overflow:hidden;display:grid;grid-template-columns:.85fr 1.15fr;align-items:center;padding:96px 64px 112px;background:radial-gradient(ellipse at 70% 55%,rgba(107,116,75,.25),transparent 60%);isolation:isolate}
+.journey-stage::before{content:'';position:absolute;inset:0;z-index:-1;background-image:linear-gradient(#f5ebd609 1px,transparent 1px),linear-gradient(90deg,#f5ebd609 1px,transparent 1px);background-size:64px 64px;transform:translateY(calc(var(--journey-progress)*-64px));mask-image:linear-gradient(transparent,#000,transparent)}
+.journey-top{position:absolute;left:48px;right:48px;top:32px;display:flex;justify-content:space-between;font-size:10px;font-weight:700;letter-spacing:.08em}
+.chapter-text{position:relative;min-height:340px;z-index:2}
+.chapter{position:absolute;inset:0;opacity:var(--chapter-opacity,0);transform:translateY(var(--chapter-shift,0px));pointer-events:none;will-change:transform,opacity}
+main .chapter-text h2{font-size:clamp(72px,10vw,160px);letter-spacing:-.07em;color:#eee6d3;line-height:1;margin:0 0 24px}
+main .chapter-text h3{font-size:26px;line-height:1.2;letter-spacing:-.03em;margin:0 0 20px;max-width:400px}
+main .chapter-text p{font-size:17px;line-height:1.5;max-width:360px;color:#d0d5c4}
+.notebook-space{perspective:1500px;display:grid;place-items:center;position:relative;min-height:500px}
+.notebook-object{width:min(450px,40vw);height:480px;position:relative;transform-style:preserve-3d;transform:rotateX(calc(14deg - var(--journey-progress)*20deg)) rotateY(calc(-20deg + var(--journey-progress)*36deg + var(--flip,0deg))) rotateZ(calc(-8deg + var(--journey-progress)*14deg));transition:transform .22s ease-out;will-change:transform}
+.notebook-object.is-flipped{--flip:180deg}
+.notebook-front,.notebook-back{position:absolute;inset:0;backface-visibility:hidden;transform-style:preserve-3d}
+.notebook-front{background:#e2d3b5;border-radius:3px 12px 12px 3px;box-shadow:3px 3px #c1b28f,6px 6px #f2e4c7,9px 9px #b4a580,12px 12px #e5d5b5,20px 24px 60px #0006}
+.book-cover{position:absolute;inset:0;background:#bba27b url('/paper-texture-cream.png') center/cover;border:1px solid #a08661;border-radius:3px 12px 12px 3px;padding:40px;transform-origin:left;transform:rotateY(calc(-1 * min(1,var(--journey-progress)*6) * 150deg));backface-visibility:hidden;box-shadow:inset 14px 0 24px #8b795433;z-index:3}
+.book-cover>span{font-size:16px;font-weight:700;letter-spacing:.04em;color:#344632}.book-cover strong{display:block;font-size:64px;line-height:.98;letter-spacing:-.06em;margin:80px 0;color:#344632}.book-cover small{font-size:9px;color:#485441;letter-spacing:.06em}
+.book-pages{position:absolute;inset:8px;background:#f3e8d3 url('/paper-texture-cream.png') center/cover;padding:32px 32px 24px;color:#2b3427;border-radius:3px 8px 8px 3px;box-shadow:inset 8px 0 20px #77684b24}
+.page-label{font-size:9px;letter-spacing:.1em;display:block;padding-bottom:16px;border-bottom:1px solid #34463240}
+.notebook-content{position:relative;height:330px;margin-top:24px}.paper-tag{display:inline-block;padding:8px 16px;font-size:18px;font-weight:700;letter-spacing:-.02em}.notebook-content pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px;line-height:1.65;margin:24px 0 32px;font-family:monospace;color:#253d2b}.project-output{border-top:1px solid #34463240;padding-top:16px}.project-output>span{font-size:9px;letter-spacing:.08em}.project-output p{font-size:19px;font-weight:700;line-height:1.3;margin-top:12px}.book-pages>small{font-size:8px;color:#645d4d;position:absolute;bottom:20px;left:32px;right:32px}
+.notebook-back{background:#c5d1ac;transform:rotateY(180deg);border-radius:12px 3px 3px 12px;padding:48px;box-shadow:12px 24px 60px #0006;color:#263e30;display:flex;flex-direction:column;justify-content:center}.notebook-back>span{font-size:48px;line-height:1;letter-spacing:-.05em;font-weight:700}.notebook-back small{margin-top:40px;font-size:13px}
+.journey-bottom{position:absolute;bottom:32px;left:48px;right:48px;display:flex;align-items:center;justify-content:space-between;gap:24px}.chapter-dots{display:flex;gap:24px}.chapter-dots button,.flip-notebook{background:none;color:#c7cdba;border:0;padding:8px 0;font-size:12px;border-bottom:1px solid transparent}.chapter-dots button span{font-size:9px;margin-right:8px}.chapter-dots button[aria-pressed=true]{border-bottom-color:#f5ebd6;color:#f5ebd6}.flip-notebook{border-bottom:1px solid #c7cdba60}.journey-scroll{font-size:10px;color:#c7cdba}.reduced-journey{display:none}.journey-summary{display:none}
+
+/* The later sections enter with depth, then settle for reading. */
+.notebook-object.is-flipped .book-cover{visibility:hidden}
+.course-controls{display:flex;gap:24px;margin-top:16px}.course-controls button{background:none;border:0;border-bottom:1px solid #34372b60;padding:8px 0;font-size:11px;color:#34372b}.course-controls button span{margin-left:8px}
+@media(prefers-reduced-motion:reduce){.course-controls{display:none}}
+.course-runway{height:300svh;--course-progress:0}
+.course-stage{position:sticky;top:0;height:100svh;min-height:680px;overflow:hidden;padding-top:48px;display:flex;flex-direction:column;justify-content:center}
+main .course-stage .section-heading{margin-bottom:48px}
+main .course-stage .section-heading h2{font-size:clamp(40px,5vw,72px);max-width:950px}
+main .course-stage .section-heading>p:last-child{font-size:16px;margin-top:16px}
+main .course-stage .track-grid{display:flex;gap:0;width:300%;border:0;transform:translateX(calc(var(--course-progress)*-66.666667%));will-change:transform}
+main .course-stage .track-card{width:33.333333%;flex:0 0 33.333333%;display:grid;grid-template-columns:1.1fr 1fr;gap:24px 48px;min-height:300px;padding:40px;background:#e4d6bb;border:1px solid #34372b40;box-shadow:none;opacity:1;transform:none;transition:none}
+main .course-stage .track-card>p:first-of-type{grid-column:1/-1;font-size:11px}
+main .course-stage .track-card h3{font-size:clamp(40px,5vw,80px);line-height:.98;margin:0}
+main .course-stage .track-detail{font-size:20px;max-width:480px;align-self:center}
+main .course-stage .track-card a{grid-column:2}
+main .course-stage .track-card.mint{background:#c5d1ac}main .course-stage .track-card.rose{background:#dfb99d}
+.course-scroll-note{font-size:10px;text-transform:uppercase;letter-spacing:.06em;display:block;margin-top:24px}
+@media(max-width:600px){.course-runway{height:240svh}.course-stage{min-height:740px;padding-top:32px}main .course-stage .section-heading{margin-bottom:24px}main .course-stage .section-heading h2{font-size:40px}main .course-stage .section-heading>p:last-child{font-size:14px}main .course-stage .track-card{grid-template-columns:1fr!important;gap:24px;padding:24px;min-height:310px}main .course-stage .track-card h3{font-size:40px}main .course-stage .track-detail{font-size:16px}main .course-stage .track-card a{grid-column:auto}.course-scroll-note{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.course-runway{height:auto}.course-stage{position:relative;height:auto;min-height:0}main .course-stage .track-grid{width:100%;display:grid;transform:none}main .course-stage .track-card{width:100%}.course-scroll-note{display:none}}
+.motion-reveal{opacity:0;transform:translateY(56px);transition:opacity .75s ease-out,transform .85s cubic-bezier(.2,.7,.2,1)}
+.motion-visible{opacity:1;transform:translateY(0)}
+.track-card:nth-child(2),.role-card:nth-child(2){transition-delay:90ms}.track-card:nth-child(3),.role-card:nth-child(3){transition-delay:180ms}
+main .ship-stage{--ship-progress:0}
+main .project-back{transform:translate(calc(-50% - var(--ship-progress)*42%), -48%) rotate(calc(var(--ship-progress)*-12deg))}
+main .project-mid{transform:translate(calc(-50% + var(--ship-progress)*42%), -52%) rotate(calc(var(--ship-progress)*12deg))}
+main .project-front{transform:translate(-50%, -50%) rotate(calc(-8deg + var(--ship-progress)*12deg))}
+@media(max-width:900px){.journey-stage{padding:80px 32px 104px;grid-template-columns:.8fr 1.2fr}.journey-top,.journey-bottom{left:32px;right:32px}.notebook-object{width:350px;height:450px}.chapter-text{min-height:320px}.book-pages{padding:24px}.book-cover{padding:32px}.book-cover strong{font-size:56px}.journey-scroll{display:none}.chapter-dots{gap:16px}.notebook-content pre{font-size:12px}.project-output p{font-size:17px}}
+@media(max-width:600px){.hero-runway{height:160svh}.hero-runway .paper-stage{min-height:760px}.journey-runway{height:420svh}.journey-stage{min-height:760px;display:flex;flex-direction:column;align-items:stretch;justify-content:center;padding:72px 24px 112px}.journey-top{left:24px;right:24px;top:24px;font-size:8px}.chapter-text{min-height:190px;margin-bottom:8px}main .chapter-text h2{font-size:72px;margin-bottom:12px}main .chapter-text h3{font-size:20px;margin-bottom:8px}main .chapter-text p{font-size:14px;max-width:310px}.notebook-space{min-height:340px;perspective:1000px}.notebook-object{width:260px;height:320px}.book-cover{padding:24px}.book-cover strong{font-size:40px;margin:56px 0}.book-cover small{font-size:7px}.book-pages{padding:16px}.notebook-content{height:240px;margin-top:16px}.notebook-content pre{font-size:10px;margin:12px 0 16px;line-height:1.5}.paper-tag{font-size:14px;padding:4px 12px}.project-output{padding-top:8px}.project-output p{font-size:14px;margin-top:8px}.book-pages>small{left:16px;bottom:12px;font-size:6px}.page-label{font-size:7px;padding-bottom:8px}.notebook-back{padding:24px}.notebook-back>span{font-size:34px}.journey-bottom{left:24px;right:24px;bottom:24px;display:grid;gap:16px;justify-content:start}.chapter-dots{gap:16px}.chapter-dots button{font-size:11px}.chapter-dots button span{font-size:8px;margin-right:4px}.flip-notebook{width:max-content;font-size:10px}}
+@media(prefers-reduced-motion:reduce){.hero-runway{height:auto!important}.hero-runway .paper-stage{position:relative!important}.hero-runway :is(.desk-scene,.scene-title,.hero-copy,.scene-description){transform:none!important;opacity:1!important}.hero-runway .desk-shade{box-shadow:none!important}.hero-runway .scene-scroll{opacity:1!important}.journey-runway{height:auto!important}.journey-stage{display:none}.reduced-journey{display:grid;gap:48px;padding:64px 24px}.reduced-journey h2{font-size:64px}.reduced-journey h3{font-size:22px;margin:16px 0}.reduced-journey p{font-size:16px;max-width:600px}.motion-reveal{opacity:1!important;transform:none!important;transition:none!important}.reading-progress{display:none}main .project-back{transform:translate(-82%,-48%) rotate(-8deg)}main .project-mid{transform:translate(-18%,-52%) rotate(7deg)}main .project-front{transform:translate(-50%,-50%)} }
